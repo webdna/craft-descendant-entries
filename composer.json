@@ -1,0 +1,49 @@
+{
+    "name": "webdna/craft-descendant-entries",
+    "description": "Entry field condition rule to limit selections to child entries of a parent",
+    "type": "craft-plugin",
+    "license": "mit",
+    "support": {
+        "email": "info@webdna.co.uk",
+        "issues": "https://github.com/webdna/craft-descendant-entries/issues?state=open",
+        "source": "https://github.com/webdna/craft-descendant-entries",
+        "docs": "https://github.com/webdna/craft-descendant-entries",
+        "rss": "https://github.com/webdna/craft-descendant-entries/releases.atom"
+    },
+    "require": {
+        "php": ">=8.0.2",
+        "craftcms/cms": "^4.4.0"
+    },
+    "require-dev": {
+        "craftcms/ecs": "dev-main",
+        "craftcms/phpstan": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "webdna\\descendantentries\\": "src/"
+        }
+    },
+    "extra": {
+        "handle": "descendant-entries",
+        "name": "Descendant Entries",
+        "developer": "webdna",
+        "documentationUrl": "https://github.com/webdna/craft-descendant-entries",
+        "class": "webdna\\descendantentries\\DescendantEntries"
+    },
+    "scripts": {
+        "check-cs": "ecs check --ansi",
+        "fix-cs": "ecs check --ansi --fix",
+        "phpstan": "phpstan --memory-limit=1G"
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "8.0.2"
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    }
+}
+
