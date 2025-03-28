@@ -28,7 +28,7 @@
         "name": "Descendant Entries",
         "developer": "webdna",
         "documentationUrl": "https://github.com/webdna/craft-descendant-entries",
-        "class": "webdna\\descendantentries\\DescendantEntries"
+        "class": "webdna\\descendantentries\\Plugin"
     },
     "scripts": {
         "check-cs": "ecs check --ansi",
