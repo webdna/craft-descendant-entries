@@ -16,7 +16,11 @@ class DescendantEntriesRule extends BaseElementSelectConditionRule implements El
 {
     function getLabel(): string
     {
-        return Craft::t('descendant-entries-condition', 'Descendant Entries');
+        // hide from element index for now
+        if ($this->condition->referenceElement) {
+            return Craft::t('descendant-entries', 'Descendant Entries');
+        }
+        return '';
     }
 
     function getExclusiveQueryParams(): array
@@ -34,10 +38,18 @@ class DescendantEntriesRule extends BaseElementSelectConditionRule implements El
         return '';
     }
 
+    // function operators(): array
+    // {
+    //     return [
+    //         ...parent::operators(),
+    //         self::OPERATOR_NOT_EMPTY,
+    //     ];
+    // }
+
     function matchElement(ElementInterface $element): bool
     {
         // Match the element based on one of its attributes
-        return $this->matchValue($element->myAttribute);
+        return $this->matchValue($element->getDescendants());
     }
 
     protected function elementType(): string
